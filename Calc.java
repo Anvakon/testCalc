@@ -12,7 +12,9 @@ public class Calc {
         Scanner lineScanner = new Scanner(System.in);
         String parsedLine = lineScanner.nextLine();
         String[] elements = parsedLine.split( " ");
-        if (elements.length != 3) {
+        if (elements.length == 1) {
+            throw new Exception("Формат математической операции не удовлятворяет заданию: введено единственное число");
+        } else if (elements.length != 3) {
             throw new Exception("Формат математической операции не удовлятворяет заданию: введите два операнда и оператор");
         }
         Scanner scanner = new Scanner(new ByteArrayInputStream(parsedLine.getBytes()));
